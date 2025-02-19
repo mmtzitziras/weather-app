@@ -11,8 +11,6 @@ html, body {
     background-repeat: no-repeat;
     background-position: center;
     color: var(--text-color);
-    display: flex;
-    flex-direction: column;
     overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
@@ -37,6 +35,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1000;
 }
 
 .navbar .title {
@@ -71,27 +70,79 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-
 .content {
     flex: 1;
     padding-top: 80px; /* To avoid content being hidden under the navbar */
     width: 100%; /* Ensure content does not overflow horizontally */
     box-sizing: border-box; /* Include padding in the element's total width and height */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    justify-content: center;
 }
 
-.weather-card {
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
+@media (max-width: 1100px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .current-weather-card, .forecast-weather-cards {
+        width: 80% !important; /* Adjust width for mobile view */
+    }
+
+    .forecast-weather-cards {
+        height: auto !important;
+        justify-content: center;
+        margin-bottom: 50px !important;
+    }
+
+    .weather-card {
+        width: 100% !important; /* Full width for mobile view */
+        min-width: unset; /* Remove min-width for mobile view */
+    }
+
+    html, body{
+        overflow: auto;
+    }
+}
+
+.current-weather-card {
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+    backdrop-filter: blur(10px); /* Blurry effect */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 400px;
+    width: 40%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    margin: 1rem;
+    flex-shrink: 0;
+}
+
+.forecast-weather-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    height: 500px;
+    margin: 1rem;
+    width: 40%;
+}
+
+.weather-card {
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+    backdrop-filter: blur(10px); /* Blurry effect */
+    /* padding: 20px; */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 10px); /* Three cards per row with a gap */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 210px;
 }
 
 .footer {
