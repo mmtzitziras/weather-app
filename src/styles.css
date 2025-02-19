@@ -1,0 +1,60 @@
+:root {
+    --text-color: black;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('assets/backround.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: var(--text-color);
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    color: var(--text-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar .title {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.navbar .search-box {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+.navbar .search-box input {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2); /* Darker background for better visibility */
+    color: white; /* White text color for contrast */
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.navbar .search-box input::placeholder {
+    color: white; /* White placeholder color for contrast */
+}
+
+.navbar .search-box input:focus {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker background on focus */
+}
+.content {
+    padding-top: 60px; /* To avoid content being hidden under the navbar */
+}
