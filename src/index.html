@@ -6,45 +6,53 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="index.js" defer></script>
 </head>
 <body>
     <div class="navbar">
         <div class="title">Weather App</div>
         <div class="search-box">
-            <input type="text" placeholder="Location...">
+            <input id="locationName" type="text" placeholder="Location...">
+            <button onclick="getWeather()">Find</button>
         </div>
     </div>
     <div class="content">
         <div class="current-weather-card">
             <h2>Current Weather</h2>
-            <p>Temperature: 25°C</p>
-            <p>Condition: Sunny</p>
+            <p id="currentTemperature">Temperature: </p>
+            <p id="currentConditions">Condition: </p>
+            <p id="currentAir">Air: </p>
         </div>
         <div class="forecast-weather-cards">
             <div class="weather-card">
-                <h2>Monday</h2>
-                <p>22°C, Cloudy</p>
+                <h2 id="date">Monday</h2>
+                <p id="temperature">22°C</p>
+                <p id="conditions"></p>
             </div>
             <div class="weather-card">
-                <h2>Tuesday</h2>
-                <p>24°C, Sunny</p>
+                <h2 id="date">Monday</h2>
+                <p id="temperature">22°C</p>
+                <p id="conditions"></p>
             </div>
             <div class="weather-card">
-                <h2>Wednesday</h2>
-                <p>20°C, Rainy</p>
+                <h2 id="date">Monday</h2>
+                <p id="temperature">22°C</p>
+                <p id="conditions"></p>
             </div>
             <div class="weather-card">
-                <h2>Thursday</h2>
-                <p>23°C, Partly Cloudy</p>
+                <h2 id="date">Monday</h2>
+                <p id="temperature">22°C</p>
+                <p id="conditions"></p>
             </div>
             <div class="weather-card">
-                <h2>Friday</h2>
-                <p>25°C, Sunny</p>
+                <h2 id="date">Monday</h2>
+                <p id="temperature">22°C</p>
+                <p id="conditions"></p>
             </div>
             <div class="weather-card">
-                <h2>Saturday</h2>
-                <p>26°C, Sunny</p>
+                <h2 id="date">Monday</h2>
+                <p id="temperature">22°C</p>
+                <p id="conditions"></p>
             </div>
         </div>
     </div>
