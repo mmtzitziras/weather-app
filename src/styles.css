@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
     --text-color: black;
 }
@@ -38,36 +40,109 @@ body {
     z-index: 1000;
 }
 
-.navbar .title {
-    font-size: 28px;
-    font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
 
-.navbar .search-box {
+
+.navbar .title{
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    color: #f6d8d5;
+    background-image: radial-gradient( #f6d8d5);
+    font-size: 28px;
+  }
+  .navbar .title::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    color: #313f97;
+    z-index: -1;
+    transition: 0.2s;
+  }
+  .navbar .title:hover::before{
+    top: 0.04em;
+    left: 0.04em;
+  }
+  .navbar .title::after{
+    content: attr(data-text);
+    position: absolute;
+    color: transparent;
+    top: 0em;
+    left: 0em;
+    background-image: radial-gradient(rgba(236, 34, 37, 0.5) 0.0125em, transparent 0.0125em);
+    background-size: 8px 8px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-stroke: 1px #ec2225;
+    transition: 0.2s;
+  }
+  .navbar .title:hover::after{
+    top: -0.04em;
+    left: -0.04em;
+  }
+
+  .navbar .search-box {
     display: flex;
     align-items: center;
     margin-right: 50px;
+    position: relative;
 }
 
 .navbar .search-box input {
-    padding: 5px 10px;
+    padding: 10px 15px;
     font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: white;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+    color: #333;
     outline: none;
-    transition: background-color 0.3s;
+    width: 250px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .search-box input::placeholder {
-    color: white;
+    color: #999;
 }
 
 .navbar .search-box input:focus {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    border-color: #ec2225;
+    box-shadow: 0 4px 8px rgba(236, 34, 37, 0.5);
+}
+
+/* Optional: Add a search icon inside the box */
+.navbar .search-box::before {
+    font-size: 16px;
+    position: absolute;
+    left: 12px;
+    color: #666;
+}
+
+.navbar .search-box input {
+    padding-left: 35px;
+}
+
+.navbar .search-box button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ec2225;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-left: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.navbar .search-box button:hover {
+    background-color: rgba(236, 34, 37, 0.8);
+    box-shadow: 0 4px 8px rgba(236, 34, 37, 0.5);
+}
+
+.navbar .search-box button:focus {
+    outline: 2px solid #ec2225;
 }
 
 .content {
@@ -172,3 +247,5 @@ body {
     height: 100px;
     margin: 0 auto;
 }
+
+
