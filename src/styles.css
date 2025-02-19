@@ -11,7 +11,19 @@ html, body {
     background-repeat: no-repeat;
     background-position: center;
     color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow-y: auto; /* Ensure vertical scrolling if needed */
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -20,41 +32,80 @@ html, body {
     backdrop-filter: blur(10px);
     padding: 10px;
     color: var(--text-color);
-    position: fixed;
     width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .navbar .title {
     font-size: 28px;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 .navbar .search-box {
     display: flex;
     align-items: center;
     margin-right: 50px;
 }
+
 .navbar .search-box input {
     padding: 5px 10px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.2); /* Darker background for better visibility */
-    color: white; /* White text color for contrast */
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
     outline: none;
     transition: background-color 0.3s;
 }
 
 .navbar .search-box input::placeholder {
-    color: white; /* White placeholder color for contrast */
+    color: white;
 }
 
 .navbar .search-box input:focus {
-    background-color: rgba(0, 0, 0, 0.5); /* Darker background on focus */
+    background-color: rgba(0, 0, 0, 0.5);
 }
+
+
 .content {
-    padding-top: 60px; /* To avoid content being hidden under the navbar */
+    flex: 1;
+    padding-top: 80px; /* To avoid content being hidden under the navbar */
+    width: 100%; /* Ensure content does not overflow horizontally */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.weather-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    color: whitesmoke;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
