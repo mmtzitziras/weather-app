@@ -22,7 +22,9 @@ async function getWeather() {
         const currentConditions = document.getElementById('currentConditions');
         const currentTemperature = document.getElementById('currentTemperature');
         const currentAirPressure = document.getElementById('currentAir');
+        const currentIcon = document.getElementById('currentIcon');
 
+        currentIcon.src = `/src/assets/${data.currentConditions.icon}.png`;
         currentConditions.innerHTML = `Conditions: ` + data.currentConditions.conditions;
         currentTemperature.innerHTML = `Temperature: ` + data.currentConditions.temp + `°C`;
         currentAirPressure.innerHTML = `Wind: ` + data.currentConditions.windspeed + ` kh/h`;
@@ -33,8 +35,9 @@ async function getWeather() {
          data.days.slice(1, 7).forEach((day, index) => {
              const forecastCard = forecastCards[index];
              forecastCard.querySelector('h2').innerText = new Date(day.datetime).toLocaleDateString('en-US', { weekday: 'long' });
-             forecastCard.querySelector('p:nth-child(2)').innerText = `${day.temp}°C`;
-             forecastCard.querySelector('p:nth-child(3)').innerText = `Conditions: ${day.description}`;
+             forecastCard.querySelector('img').src = `/src/assets/${day.icon}.png`;
+             forecastCard.querySelector('p').innerText = `${day.tempmin}°C - ${day.tempmax}°C`;
+             
          });
 
     }
