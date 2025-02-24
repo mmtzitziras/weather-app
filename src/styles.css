@@ -8,7 +8,7 @@ html, body {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('assets/backround.jpg');
+    background-image: url('./assets/backround.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

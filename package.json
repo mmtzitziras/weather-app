@@ -3,15 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "http://mmtzitziras.github.io/weather-app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmtzitziras/weather-app.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^7.1.1",
     "csv-loader": "^3.0.5",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.0",
     "json5": "^2.2.3",
     "style-loader": "^4.0.0",
