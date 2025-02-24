@@ -23,6 +23,12 @@ async function getWeather() {
         const currentTemperature = document.getElementById('currentTemperature');
         const currentAirPressure = document.getElementById('currentAir');
         const currentIcon = document.getElementById('currentIcon');
+        const currentWeatherDiv = document.querySelector('.current-weather-card');
+        currentWeatherDiv.style.visibility = 'visible';
+        const forecastWeatherDiv = document.querySelector('.forecast-weather-cards');
+        forecastWeatherDiv.style.visibility = 'visible';
+        const currentLocation = document.getElementById('currentLocation');
+        currentLocation.innerHTML = data.resolvedAddress;
 
         currentIcon.src = `/src/assets/${data.currentConditions.icon}.png`;
         currentConditions.innerHTML = `Conditions: ` + data.currentConditions.conditions;
@@ -36,13 +42,15 @@ async function getWeather() {
              const forecastCard = forecastCards[index];
              forecastCard.querySelector('h2').innerText = new Date(day.datetime).toLocaleDateString('en-US', { weekday: 'long' });
              forecastCard.querySelector('img').src = `/src/assets/${day.icon}.png`;
-             forecastCard.querySelector('p').innerText = `${day.tempmin}°C - ${day.tempmax}°C`;
+             forecastCard.querySelector('p').innerText = `Min: ${day.tempmin}°C/Max: ${day.tempmax}°C`;
              
          });
 
     }
     catch(error){
         console.error(error);
+        alert('Please enter a valid location');
+        const locationName = document.getElementById('locationName').value = " ";
     }
 }
 

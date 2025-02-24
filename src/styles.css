@@ -162,6 +162,7 @@ body {
 
     .current-weather-card, .forecast-weather-cards {
         width: 80% !important; /* Adjust width for mobile view */
+        height: auto !important;
     }
 
     .forecast-weather-cards {
@@ -191,9 +192,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 500px;
+    height: 80%;
     margin: 1rem;
     flex-shrink: 0;
+    visibility: hidden;
 }
 
 .forecast-weather-cards {
@@ -201,9 +203,11 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    height: 500px;
+    height: 80%;
     margin: 1rem;
     width: 40%;
+    align-items: center;
+    visibility: hidden;
 }
 
 .weather-card {
@@ -237,14 +241,14 @@ body {
 }
 
 .weather-icon{
-    width: 60px;
-    height: 60px;
+    width: 15%;
+    height: auto;
     margin: 0 auto;
 }
 
 .current-weather-icon{
-    width: 100px;
-    height: 100px;
+    width: 15%;
+    height: auto;
     margin: 0 auto;
 }
 
